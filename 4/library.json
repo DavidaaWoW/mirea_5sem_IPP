@@ -1,0 +1,65 @@
+{
+  "libraries": [
+    {
+      "id": 1,
+      "name": "firstLibrary"
+    },
+    {
+      "id": 2,
+      "name": "secondLibrary"
+    },
+    {
+      "id": 3,
+      "name": "thirdLibrary"
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "name": "firstAuthor",
+      "birthDate": "1900-01-01"
+    },
+    {
+      "id": 2,
+      "name": "secondAuthor",
+      "birthDate": "1902-02-02"
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "name": "firstBook",
+      "authorId": 1,
+      "libraries": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "name": "secondBook",
+      "authorId": 2,
+      "libraries": [
+        2
+      ]
+    },
+    {
+      "id": 3,
+      "name": "thirdBook",
+      "authorId": 1,
+      "libraries": [
+        3
+      ]
+    },
+    {
+      "id": 4,
+      "name": "fourthBook",
+      "authorId": 2,
+      "libraries": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}

@@ -1,0 +1,338 @@
+openapi: 3.0.3
+info:
+  title: Super auto - OpenAPI 1.0
+  description: |-
+    Api service for "Super auto" web application
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: davidik.gegiya@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: "1.0"
+servers:
+  - url: http://localhost:3000
+tags:
+  - name: brand
+    description: Everything about brands
+  - name: car
+    description: Access to cars
+paths:
+  /brand:
+    get:
+      tags:
+        - brand
+      summary: Get all brands
+      description: Get all brands
+      operationId: getBrands
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Brand'          
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Brand'
+    post:
+      tags:
+        - brand
+      summary: Add new brand
+      description: Add new brand
+      operationId: addBrand
+      requestBody:
+        description: Add new brand
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Brand'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Brand'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Brand'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: string
+                example: "Success!"
+    delete:
+      tags:
+        - brand
+      summary: Delete all brands
+      description: Delete all brands
+      operationId: deleteBrands
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: string
+                example: "Success!"
+
+  /brand{brandId}:
+    get:
+      tags:
+        - brand
+      summary: Get an existing brand
+      description: Get an existing brand by Id
+      operationId: getBrand
+      parameters:
+        - name: brandId
+          in: path
+          description: ID of brand to get
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Brand'          
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Brand'
+    put:
+      tags:
+        - brand
+      summary: Update an existing brand
+      description: Update an existing brand by Id
+      operationId: updateBrand
+      parameters:
+        - name: brandId
+          in: path
+          description: ID of brand to update
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        description: Update an existent brand
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Brand'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Brand'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Brand'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: string
+                example: "Success!"
+    delete:
+      tags:
+        - brand
+      summary: Delete an existing brand
+      description: Delete an existing brand by Id
+      operationId: deleteBrand
+      parameters:
+        - name: brandId
+          in: path
+          description: ID of brand to delete
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: string
+                example: "Success!"
+  /car:
+    get:
+      tags:
+        - car
+      summary: Get all cars
+      description: Get all cars
+      operationId: getCars
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Car'          
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Car'
+    post:
+      tags:
+        - car
+      summary: Add new car
+      description: Add new car
+      operationId: addCar
+      requestBody:
+        description: Add new car
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Car'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Car'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Car'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: string
+                example: "Success!"
+    delete:
+      tags:
+        - car
+      summary: Delete all cars
+      description: Delete all cars
+      operationId: deleteCars
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: string
+                example: "Success!"
+
+  /car{carId}:
+    get:
+      tags:
+        - car
+      summary: Get an existing car
+      description: Get an existing car by Id
+      operationId: getCar
+      parameters:
+        - name: carId
+          in: path
+          description: ID of car to get
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Car'          
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Car'
+    put:
+      tags:
+        - car
+      summary: Update an existing car
+      description: Update an existing car by Id
+      operationId: updateCar
+      parameters:
+        - name: carId
+          in: path
+          description: ID of car to update
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        description: Update an existent car
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Car'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Car'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Car'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: string
+                example: "Success!"
+    delete:
+      tags:
+        - car
+      summary: Delete an existing car
+      description: Delete an existing car by Id
+      operationId: deleteCar
+      parameters:
+        - name: carId
+          in: path
+          description: ID of car to delete
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: string
+                example: "Success!"              
+                
+components:
+  schemas:
+    Brand:
+      type: object
+      properties:
+        name:
+          type: string
+          example: audi
+        logo:
+          type: string
+          example: https://autocomplex78.ru/wp-content/uploads/2020/07/audi-2048x1152.png
+      xml:
+        name: brand
+    Car:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Audi Q7
+        image:
+          type: string
+          example: https://autocomplex78.ru/wp-content/uploads/2020/07/audi-2048x1152.png
+        brandId:
+          type: integer
+          example: 1
+      xml:
+        name: car
