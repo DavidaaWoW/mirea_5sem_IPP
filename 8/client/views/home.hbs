@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+        <div class="alert alert-danger" style="padding: 0;">{{ err }}</div>
+    <div class="alert alert-success" style="padding: 0;">{{ data }}</div>
+    <h1>{{ data }}</h1>
+    <div style="display: flex; justify-content: space-around;">
+        <div style="max-width: 40em;">
+            <h2>Для удаления аккаунта введите текущую почту и пароль</h2>
+                <form action="/delete" method="post" style="max-width: 1000px">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Почта</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" id="mail">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Пароль</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password" id="pass">
+        </div>
+        <button type="submit" class="btn btn-danger">Удалить аккаунт</button>
+    </form>
+    
+        </div>
+        <div style="max-width: 40em;"><h2>Для Изменения пользователя введите текущую почту и пароль, а также новые данные</h2>
+                <form action="/edit" method="post" style="max-width: 1000px">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Почта</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" id="mail">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Пароль</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password" id="pass">
+        </div>
+                <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Новое имя</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" name="newname" id="pass">
+        </div>
+                <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Новая почта</label>
+            <input type="email" class="form-control" id="exampleInputPassword1" name="newmail" id="pass">
+        </div>
+                <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Новый пароль</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="newpassword" id="pass">
+        </div>
+        <button type="submit" class="btn btn-success">Изменить данные</button>
+    </form>
+        </div>
+    </div>
+</body>
+</html>

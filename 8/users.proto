@@ -1,0 +1,28 @@
+syntax = "proto3";
+package gRPC_service;
+service AuthService {
+    rpc registerUser(User) returns (Reply);
+    rpc loginUser(Credentials) returns (Reply);
+    rpc editUser(EditUser) returns (Reply);
+    rpc deleteUser(Credentials) returns (Reply);
+}
+message User {
+string id = 1;
+string name = 2;
+string email = 3;
+string password = 4;
+}
+
+message Credentials {
+    string email = 1;
+    string password = 2;
+}
+
+message EditUser {
+    Credentials credentials = 1;
+    User newUser = 2;
+}
+
+message Reply{
+    string reply = 1;
+}
